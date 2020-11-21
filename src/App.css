@@ -1,38 +1,44 @@
 .App {
+  text-align: left;
+  padding: 0 16px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.app-container .app-column > h4 {
   text-align: center;
+  color: #030384;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container .app-column > div {
+  border-right: 1px solid #000;
+  border-radius: 0;
+  height: 100%;
+  box-sizing: border-box;
+  height: calc(100% - 22px);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container .app-column:last-child > div {
+  border-right: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-container .app-column:first-child > div .todo-card {
+  background-color: rgb(241 119 119 / 0.4);
 }
-
-.App-link {
-  color: #61dafb;
+.app-container .app-column:nth-child(2) > div .todo-card {
+  background-color: rgb(241 181 119 / 0.4);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-container .app-column:last-child > div .todo-card {
+  background-color: rgb(172 241 119 / 0.4);
+}
+.fadeOut {
+  opacity: 0;
+  width: 0 !important;
+  height: 0 !important;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.fadeOut > * {
+  display: none;
+}
+.fadeIn {
+  opacity: 1;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s !important;
 }
